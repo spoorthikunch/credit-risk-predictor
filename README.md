@@ -48,7 +48,7 @@ Models were evaluated using:
 
 Three models were evaluated: Logistic Regression, Random Forest, and XGBoost.
 
-Although Random Forest showed slightly higher overall accuracy, Logistic Regression and XGBoost achieved significantly higher recall for high-risk applicants (>0.90).
+Although Random Forest showed slightly higher overall accuracy, Logistic Regression and XGBoost achieved significantly higher recall for high-risk applicants.
 
 Since minimizing false negatives (missing defaulters) is critical in credit risk assessment, the final model was selected based on recall performance and ROC-AUC rather than accuracy alone.
 
