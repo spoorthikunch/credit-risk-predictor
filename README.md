@@ -1,86 +1,70 @@
 # 💳 Credit Risk Prediction
 
-An end-to-end Machine Learning project that predicts the likelihood of loan default using financial and demographic applicant data.
+An end-to-end Machine Learning project that predicts whether a loan applicant is likely to default using financial and demographic features.
 
-The goal is to support risk-aware credit approval decisions by identifying high-risk applicants while minimizing false negatives.
+This project demonstrates a complete modeling workflow — from preprocessing and feature engineering to model evaluation and selection.
 
 ---
 
 ## 📌 Problem Statement
 
-Financial institutions must assess default risk before approving loans.
+Financial institutions must assess credit risk before approving loans. Incorrectly approving high-risk applicants can result in financial losses.
 
-This project builds a binary classification model to predict whether an applicant is likely to default based on features such as:
-
-- Income  
-- Loan amount  
-- Employment status  
-- Credit history  
-- Age and other demographic attributes  
-
-The primary objective is to optimize recall for high-risk applicants, ensuring potential defaulters are not missed.
+This project builds a binary classification model to identify high-risk borrowers while maintaining balanced and stable predictive performance.
 
 ---
 
 ## 🛠 Project Workflow
 
-### Data Preprocessing
-- Missing value handling  
-- Categorical variable encoding  
+### 🔹 Data Preprocessing
+- Handling missing values  
+- Encoding categorical variables  
 - Feature scaling  
-- Structured feature engineering  
+- Multicollinearity analysis  
+- Feature refinement  
 
-### Models Implemented
+### 🔹 Model Development
+The following models were implemented and evaluated:
+
 - Logistic Regression  
-- Random Forest Classifier  
-- XGBoost Classifier  
+- Random Forest  
+- XGBoost  
 
-### Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-Score  
-- ROC-AUC  
+Models were compared using classification metrics and ROC analysis.
 
 ---
 
-## 📊 Model Performance Summary
+## ⚙️ Hyperparameter Tuning
 
-| Model              | Accuracy | ROC-AUC |
-|-------------------|----------|---------|
-| Logistic Regression | ~0.82 | ~0.89 |
-| Random Forest       | ~0.83 | ~0.89 |
-| XGBoost             | ~0.82 | ~0.89 |
+Hyperparameter tuning was performed using GridSearchCV to evaluate potential performance improvements.
 
-While Random Forest achieved slightly higher accuracy, Logistic Regression and XGBoost demonstrated stronger recall for defaulters.
+The tuned configuration showed comparable performance to the base model, indicating that the dataset was well-structured and did not require additional complexity.
 
 ---
 
 ## 🏆 Final Model Selection
 
-Model selection was based on business-critical metrics rather than accuracy alone.
+Logistic Regression was selected as the final model based on:
 
-Since minimizing false negatives (missing high-risk applicants) is crucial in credit risk assessment, the final model was chosen based on:
+- Strong identification of high-risk applicants  
+- Balanced classification performance  
+- Interpretability and simplicity  
+- Stable and consistent results  
 
-- Strong recall for defaulters  
-- High ROC-AUC (~0.89)  
-- Balanced precision-recall tradeoff  
-
-This ensures risk-sensitive and reliable credit evaluation.
-
----
-
-## 📁 Repository Structure
-
-- `Credit_Risk_Analysis.ipynb` – End-to-end modeling workflow  
-- `app.py` – Deployment application (Streamlit)  
-- `credit_risk_model.pkl` – Trained model  
-- `requirements.txt` – Project dependencies  
-- `runtime.txt` – Python version configuration  
+Given the importance of minimizing false negatives in credit risk prediction, the selected model aligns well with business objectives.
 
 ---
 
-## ⚙️ Run Locally
+## 📂 Repository Structure
+
+- `Credit_Risk_Analysis.ipynb` — Complete modeling workflow  
+- `logistic_model.pkl` — Final trained model  
+- `app.py` — Deployment application  
+- `requirements.txt` — Project dependencies  
+
+---
+
+## 🚀 Run Locally
 
 ```bash
 git clone https://github.com/spoorthikunch/credit-risk-predictor.git
