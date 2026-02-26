@@ -31,7 +31,7 @@ The objective of this project is to build a classification model that predicts c
 ### Models Implemented
 - Logistic Regression
 - Random Forest Classifier
-- XGBoost Classifier (if used)
+- XGBoost Classifier
 
 ### Model Evaluation
 Models were evaluated using:
@@ -40,7 +40,7 @@ Models were evaluated using:
 - Recall
 - F1-Score
 - ROC-AUC Score
-- Confusion Matrix
+  
 
 ---
 
