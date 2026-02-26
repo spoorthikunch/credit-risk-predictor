@@ -1,63 +1,79 @@
 # 💳 Credit Risk Prediction
 
-An end-to-end Machine Learning project that predicts whether a loan applicant is likely to default based on financial and demographic information.
+An end-to-end Machine Learning project that predicts the likelihood of loan default using financial and demographic applicant data.
 
-This project covers the complete workflow from data preprocessing and model training to deployment setup.
+The goal is to support risk-aware credit approval decisions by identifying high-risk applicants while minimizing false negatives.
 
 ---
 
 ## 📌 Problem Statement
 
-Financial institutions must evaluate the risk of loan default before approving credit.
+Financial institutions must assess default risk before approving loans.
 
-The objective of this project is to build a classification model that predicts credit risk using applicant features such as:
+This project builds a binary classification model to predict whether an applicant is likely to default based on features such as:
 
-- Income
-- Loan amount
-- Employment status
-- Credit history
-- Age and other demographic attributes
+- Income  
+- Loan amount  
+- Employment status  
+- Credit history  
+- Age and other demographic attributes  
+
+The primary objective is to optimize recall for high-risk applicants, ensuring potential defaulters are not missed.
 
 ---
 
 ## 🛠 Project Workflow
 
 ### Data Preprocessing
-- Handling missing values
-- Encoding categorical variables
-- Feature scaling
-- Feature engineering
+- Missing value handling  
+- Categorical variable encoding  
+- Feature scaling  
+- Structured feature engineering  
 
 ### Models Implemented
-- Logistic Regression
-- Random Forest Classifier
-- XGBoost Classifier
+- Logistic Regression  
+- Random Forest Classifier  
+- XGBoost Classifier  
 
-### Model Evaluation
-Models were evaluated using:
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC Score
-  
+### Evaluation Metrics
+- Accuracy  
+- Precision  
+- Recall  
+- F1-Score  
+- ROC-AUC  
 
 ---
 
-## 🏆 Final Model
+## 📊 Model Performance Summary
 
-Three models were evaluated: Logistic Regression, Random Forest, and XGBoost.
+| Model              | Accuracy | ROC-AUC |
+|-------------------|----------|---------|
+| Logistic Regression | ~0.82 | ~0.89 |
+| Random Forest       | ~0.83 | ~0.89 |
+| XGBoost             | ~0.82 | ~0.89 |
 
-Although Random Forest showed slightly higher overall accuracy, Logistic Regression and XGBoost achieved significantly higher recall for high-risk applicants.
+While Random Forest achieved slightly higher accuracy, Logistic Regression and XGBoost demonstrated stronger recall for defaulters.
 
-Since minimizing false negatives (missing defaulters) is critical in credit risk assessment, the final model was selected based on recall performance and ROC-AUC rather than accuracy alone.
+---
+
+## 🏆 Final Model Selection
+
+Model selection was based on business-critical metrics rather than accuracy alone.
+
+Since minimizing false negatives (missing high-risk applicants) is crucial in credit risk assessment, the final model was chosen based on:
+
+- Strong recall for defaulters  
+- High ROC-AUC (~0.89)  
+- Balanced precision-recall tradeoff  
+
+This ensures risk-sensitive and reliable credit evaluation.
 
 ---
 
 ## 📁 Repository Structure
 
-- `Credit_Risk_Analysis.ipynb` – Complete modeling workflow  
-- `app.py` – Deployment application  
+- `Credit_Risk_Analysis.ipynb` – End-to-end modeling workflow  
+- `app.py` – Deployment application (Streamlit)  
 - `credit_risk_model.pkl` – Trained model  
 - `requirements.txt` – Project dependencies  
 - `runtime.txt` – Python version configuration  
